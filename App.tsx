@@ -81,10 +81,10 @@ export default function App() {
     { name: 'Contact', href: '#contact' },
   ];
 
-  const COMPANY_NAME = "Axis Passenger Transport";
+  const COMPANY_NAME = "Axis";
   const LOCATION_NAME = "Dubai, UAE";
   const CONTACT_PHONE = "+44 7882 414162";
-  const CONTACT_EMAIL = "info@axis-transport.ae";
+  const CONTACT_EMAIL = "test@test-transport.ae";
   const waPhone = CONTACT_PHONE.replace(/[^\d]/g, '');
 
   return (

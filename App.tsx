@@ -295,11 +295,11 @@ export default function App() {
                 <motion.div 
                   key={service.id}
                   variants={fadeInUp}
-                  className="group p-10 rounded-[2.5rem] border border-slate-100 bg-white hover:border-navy transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden flex flex-col items-start text-left"
+                  className="group p-10 rounded-[2.5rem] border border-slate-100 bg-white hover:bg-navy hover:border-navy transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden flex flex-col items-start text-left"
                 >
                   {/* Background decoration for hover visibility and branding */}
                   <div className="absolute top-0 right-0 p-8 opacity-[0.05] group-hover:opacity-10 group-hover:scale-110 transition-all duration-500 pointer-events-none">
-                    <IconComp size={100} className="text-navy" />
+                    <IconComp size={100} className="text-navy group-hover:text-gold" />
                   </div>
                   
                   {/* Icon container - improved visibility and contrast */}
@@ -307,17 +307,17 @@ export default function App() {
                     <IconComp className="text-navy transition-colors group-hover:scale-110" size={32} />
                   </div>
                   
-                  <h4 className="font-bold text-2xl mb-4 leading-tight text-navy group-hover:text-navy transition-colors">
+                  <h4 className="font-bold text-2xl mb-4 leading-tight text-navy group-hover:text-white transition-colors">
                     {service.title}
                   </h4>
                   
-                  <p className="text-slate-600 group-hover:text-slate-700 text-sm leading-relaxed mb-8 flex-grow">
+                  <p className="text-slate-600 group-hover:text-slate-300 text-sm leading-relaxed mb-8 flex-grow transition-colors">
                     {service.description}
                   </p>
                   
-                  <a href="#contact" className="inline-flex items-center text-gold font-black text-[10px] uppercase tracking-[0.2em] group-hover:text-navy transition-all duration-300">
+                  <a href="#contact" className="inline-flex items-center text-gold font-black text-[10px] uppercase tracking-[0.2em] group-hover:text-gold transition-all duration-300">
                     Get Details 
-                    <div className="ml-2 w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-navy group-hover:text-white transition-all">
+                    <div className="ml-2 w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold group-hover:text-navy transition-all">
                       <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
                     </div>
                   </a>

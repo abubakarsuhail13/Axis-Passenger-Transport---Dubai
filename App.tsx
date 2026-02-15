@@ -15,8 +15,8 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-import { SERVICES, FLEET, WHY_CHOOSE_US, INDUSTRIES } from './constants';
-import { getAIQuoteAdvice } from './geminiService';
+import { SERVICES, FLEET, WHY_CHOOSE_US, INDUSTRIES } from './constants.tsx';
+import { getAIQuoteAdvice } from './geminiService.ts';
 
 const IconMap: Record<string, any> = {
   Plane, UserCheck, Map: MapIcon, Bus, Users, GraduationCap, Hotel, Calendar
@@ -81,18 +81,14 @@ export default function App() {
     { name: 'Contact', href: '#contact' },
   ];
 
-  // Professional branding constants
   const COMPANY_NAME = "Axis Passenger Transport";
   const LOCATION_NAME = "Dubai, UAE";
   const CONTACT_PHONE = "+44 7882 414162";
   const CONTACT_EMAIL = "info@axis-transport.ae";
-
-  // Format phone for WhatsApp wa.me links (remove +, spaces, etc.)
   const waPhone = CONTACT_PHONE.replace(/[^\d]/g, '');
 
   return (
     <div className="min-h-screen font-sans flex flex-col overflow-x-hidden antialiased selection:bg-gold selection:text-navy">
-      {/* Top Header Contact Bar */}
       <div className="bg-navy text-white text-[10px] md:text-xs py-2 px-4 md:px-12 flex justify-between items-center border-b border-white/10 relative z-[60]">
         <div className="flex gap-4 md:gap-6">
           <a href={`tel:${CONTACT_PHONE}`} className="flex items-center gap-1.5 hover:text-gold transition-colors font-bold">
@@ -110,7 +106,6 @@ export default function App() {
         </div>
       </div>
 
-      {/* Sticky Navigation */}
       <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
         scrolled 
           ? 'bg-white shadow-2xl py-3 mt-0 border-b border-slate-100' 
@@ -134,7 +129,6 @@ export default function App() {
             </div>
           </motion.a>
 
-          {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-10">
             {menuItems.map((item) => (
               <a 
@@ -165,13 +159,11 @@ export default function App() {
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)} 
             className={`lg:hidden p-3 rounded-xl transition-colors duration-300 ${scrolled ? 'text-navy bg-slate-100' : 'text-white bg-white/10'}`}
-            aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
@@ -203,7 +195,6 @@ export default function App() {
         </AnimatePresence>
       </nav>
 
-      {/* Hero Section */}
       <header id="home" ref={heroRef} className="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden">
         <motion.div 
           style={{ y: backgroundY }}
@@ -271,13 +262,9 @@ export default function App() {
         </motion.div>
       </header>
 
-      {/* Services Section */}
       <section id="services" className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 md:px-12">
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mb-24"
-          >
+          <motion.div {...fadeInUp} className="text-center mb-24">
             <h2 className="text-gold font-black tracking-[0.3em] text-xs mb-6 uppercase">OUR EXPERTISE</h2>
             <h3 className="text-navy font-heading text-4xl md:text-5xl mb-8">Professional Services</h3>
             <div className="w-24 h-1 bg-gold mx-auto rounded-full"></div>
@@ -301,19 +288,15 @@ export default function App() {
                   <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-10 group-hover:scale-110 transition-all duration-500 pointer-events-none">
                     <IconComp size={100} className="text-navy group-hover:text-gold" />
                   </div>
-                  
                   <div className="bg-white group-hover:bg-gold w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-md transition-all duration-500 border border-slate-100 group-hover:border-gold">
                     <IconComp className="text-navy transition-all duration-500 group-hover:scale-110" size={32} />
                   </div>
-                  
                   <h4 className="font-bold text-xl mb-4 leading-tight text-navy group-hover:text-white transition-colors">
                     {service.title}
                   </h4>
-                  
                   <p className="text-slate-600 group-hover:text-slate-300 text-sm leading-relaxed mb-8 flex-grow transition-colors">
                     {service.description}
                   </p>
-                  
                   <a href="#contact" className="inline-flex items-center text-gold font-black text-[10px] uppercase tracking-[0.2em] transition-all duration-500 group-hover:text-gold">
                     Get Details 
                     <div className="ml-2 w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold group-hover:text-navy transition-all duration-500">
@@ -327,84 +310,9 @@ export default function App() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-24 bg-slate-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 md:px-12">
-          <div className="flex flex-col lg:flex-row items-center gap-20">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="lg:w-1/2 relative"
-            >
-              <div className="absolute -top-12 -left-12 w-48 h-48 bg-gold/20 rounded-full blur-3xl -z-10"></div>
-              <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
-                <img 
-                  src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Corporate Excellence" 
-                  className="w-full h-auto object-cover hover:scale-105 transition duration-1000"
-                />
-              </div>
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
-                className="absolute -bottom-8 -right-8 bg-navy text-white p-10 rounded-[2rem] z-20 shadow-2xl border-b-4 border-gold hidden sm:block"
-              >
-                <p className="text-5xl font-black text-gold mb-1">10+</p>
-                <p className="text-xs font-bold tracking-widest text-slate-400 uppercase">Years Experience</p>
-              </motion.div>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="lg:w-1/2"
-            >
-              <h2 className="text-gold font-black tracking-[0.2em] text-sm mb-6 uppercase">ABOUT OUR COMPANY</h2>
-              <h3 className="text-navy font-heading text-4xl md:text-5xl mb-8 leading-tight">Your Partner in Safe & Reliable Logistics</h3>
-              <p className="text-slate-600 mb-10 text-lg leading-relaxed">
-                {COMPANY_NAME} is dedicated to providing high-end, reliable transportation that businesses and institutions depend on every single day. We prioritize safety, comfort, and professional service across the Emirates.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-6 mb-12">
-                {[
-                  'Certified Professional Drivers',
-                  'State-of-the-Art Vehicle Fleet',
-                  'Strict Adherence to Punctuality',
-                  'Comprehensive 24/7 Support',
-                  'Fully Insured Operations',
-                  'Customized Logistics Plans'
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center">
-                      <CheckCircle2 className="text-gold" size={16} />
-                    </div>
-                    <span className="font-semibold text-navy text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
-              <motion.a 
-                whileHover={{ x: 10 }}
-                href="#contact"
-                className="inline-flex items-center gap-3 bg-navy text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-gold hover:text-navy transition-all shadow-xl"
-              >
-                LEARN MORE ABOUT US <ArrowRight size={20} />
-              </motion.a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Fleet Section */}
       <section id="fleet" className="py-24 bg-slate-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 md:px-12">
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mb-20"
-          >
+          <motion.div {...fadeInUp} className="text-center mb-20">
             <h2 className="text-gold font-black tracking-[0.3em] text-xs mb-6 uppercase">OUR PREMIUM FLEET</h2>
             <h3 className="text-navy font-heading text-4xl md:text-5xl mb-8">Modern Fleet</h3>
             <p className="text-slate-500 max-w-2xl mx-auto text-lg md:text-xl font-medium opacity-80">Highly maintained vehicles ensuring comfort and safety for every passenger.</p>
@@ -464,7 +372,6 @@ export default function App() {
             ))}
           </div>
 
-          {/* AI Advice Assistant */}
           <motion.div 
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -481,7 +388,6 @@ export default function App() {
                 <p className="text-slate-300 text-lg mb-10 font-medium opacity-80 leading-relaxed max-w-lg">
                   Tell our AI assistant your requirements and get a personalized recommendation instantly.
                 </p>
-                
                 <form onSubmit={handleAiAsk} className="relative max-w-xl group">
                   <input 
                     type="text" 
@@ -527,7 +433,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-12">
           <motion.div 
@@ -542,7 +447,6 @@ export default function App() {
               </div>
               <h2 className="text-4xl font-heading mb-10 relative z-10 leading-none">Get Your <br /><span className="text-gold">Quote</span> Today</h2>
               <p className="text-slate-300 text-lg mb-12 leading-relaxed opacity-70 font-medium">Professional consultants standing by 24/7 to plan your transportation needs.</p>
-              
               <div className="space-y-12 relative z-10">
                 <div className="flex items-start gap-6 group">
                   <div className="bg-gold text-navy p-4 rounded-xl shadow-xl shadow-gold/20 transition-all duration-500 group-hover:rotate-[360deg] group-hover:scale-110">
@@ -595,7 +499,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-navy text-white pt-24 pb-12 border-t border-white/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 md:px-12 relative z-10">
           <div className="grid md:grid-cols-4 gap-16 mb-24">
@@ -641,14 +544,12 @@ export default function App() {
               <p>&copy; {new Date().getFullYear()} {COMPANY_NAME} - All Rights Reserved.</p>
               <p className="mt-1 opacity-30">Dubai, United Arab Emirates</p>
             </div>
-            
             <div className="text-slate-400 text-[10px] font-black tracking-[0.2em] uppercase">
               Powered by <a href="https://www.nexaforgetech.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-colors">Nexaforge Technologies</a>
             </div>
           </div>
         </div>
 
-        {/* Floating Actions */}
         <div className="fixed bottom-10 right-10 z-50 flex flex-col gap-4">
           <motion.a 
             initial={{ scale: 0, y: 50 }}

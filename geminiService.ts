@@ -1,11 +1,10 @@
-
 import { GoogleGenAI } from "@google/genai";
-
-// Initialize GoogleGenAI client with the API key from environment variables.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const getAIQuoteAdvice = async (userRequirement: string) => {
   try {
+    // Move initialization inside the async function to prevent top-level execution errors.
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: `User is looking for bus rental in Dubai/UAE. Their requirement: "${userRequirement}". 
@@ -16,7 +15,8 @@ export const getAIQuoteAdvice = async (userRequirement: string) => {
         topP: 0.8,
       }
     });
-    // Accessing text content directly via property.
+    
+    // Direct property access to the text content as per guidelines.
     return response.text;
   } catch (error) {
     console.error("AI Assistant error:", error);

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Bus, 
@@ -17,80 +16,80 @@ import {
 import { Service, Vehicle, Testimonial } from './types';
 
 export const SERVICES: Service[] = [
-  { id: '1', title: 'Airport Transfers', description: 'Reliable arrival & departure transfers across all UAE airports.', icon: 'Plane' },
-  { id: '2', title: 'Chauffeur Services', description: 'Professional chauffeur-driven luxury vehicles for all occasions.', icon: 'UserCheck' },
-  { id: '3', title: 'UAE Tours', description: 'Guided luxury bus tours exploring the beauty of the Emirates.', icon: 'Map' },
-  { id: '4', title: 'Bus Rental', description: 'Short and long-term rental solutions with flexible contracts.', icon: 'Bus' },
-  { id: '5', title: 'Staff Transportation', description: 'Efficient and punctual daily commute for corporate employees.', icon: 'Users' },
-  { id: '6', title: 'School Transport', description: 'Safe and secure daily transport for schools and colleges.', icon: 'GraduationCap' },
-  { id: '7', title: 'Hotel Services', description: 'Limousine and staff transfer services for the hospitality sector.', icon: 'Hotel' },
-  { id: '8', title: 'Event Logistics', description: 'Seamless group transportation for weddings, corporate events, and more.', icon: 'Calendar' },
+  { id: '1', title: 'Airport Transfers', description: 'Reliable arrival & departure transfers across all major airports with professional greeting.', icon: 'Plane' },
+  { id: '2', title: 'Chauffeur Services', description: 'Professional chauffeur-driven luxury vehicles for corporate and VIP events.', icon: 'UserCheck' },
+  { id: '3', title: 'Regional Tours', description: 'Guided luxury bus tours exploring the local landmarks and cultural beauty.', icon: 'Map' },
+  { id: '4', title: 'Bus Rental', description: 'Short and long-term rental solutions with highly flexible contracts.', icon: 'Bus' },
+  { id: '5', title: 'Staff Transportation', description: 'Efficient and punctual daily commute for large-scale employee transport.', icon: 'Users' },
+  { id: '6', title: 'School Transport', description: 'Safe and secure daily transport for students at all educational levels.', icon: 'GraduationCap' },
+  { id: '7', title: 'Hotel Services', description: 'Specialized transfer services for the hospitality and tourism sectors.', icon: 'Hotel' },
+  { id: '8', title: 'Event Logistics', description: 'Seamless group transportation for corporate conferences and large events.', icon: 'Calendar' },
 ];
 
 export const FLEET: Vehicle[] = [
   {
     id: 'f1',
-    name: '50/53 Seater Luxury Bus',
+    name: '53 Seater Luxury Coach',
     capacity: '50-53 Passengers',
-    features: ['Plush Reclining Seats', 'Climate Control', 'On-board Wi-Fi', 'Ample Luggage Space'],
-    imageUrl: 'https://picsum.photos/id/183/800/600',
-    specifications: { ac: true, safety: 'ABS, EBD, 3-Point Belts', comfort: 'Executive Seating' }
+    features: ['Plush Reclining Seats', 'Advanced Climate Control', 'High-Speed Wi-Fi', 'Spacious Cargo Area'],
+    imageUrl: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1200',
+    specifications: { ac: true, safety: 'Certified Safety Systems', comfort: 'Premium Interior' }
   },
   {
     id: 'f2',
-    name: '35/37 Seater Luxury Coach',
-    capacity: '35-37 Passengers',
-    features: ['Premium Audio System', 'Dual AC', 'Large Viewing Windows'],
-    imageUrl: 'https://picsum.photos/id/1071/800/600',
-    specifications: { ac: true, safety: 'CCTV Monitored', comfort: 'Standard Luxury' }
+    name: '35 Seater Executive Coach',
+    capacity: '35 Passengers',
+    features: ['Media Entertainment', 'Dual Air Conditioning', 'Privacy Curtains'],
+    imageUrl: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&q=80&w=1200',
+    specifications: { ac: true, safety: 'Full Monitoring System', comfort: 'Executive Design' }
   },
   {
     id: 'f3',
-    name: '30 Seater Toyota Coaster',
+    name: '30 Seater Economy Bus',
     capacity: '30 Passengers',
-    features: ['High Roof', 'Compact & Efficient', 'Smooth Ride'],
-    imageUrl: 'https://picsum.photos/id/1072/800/600',
-    specifications: { ac: true, safety: 'Emergency Exit', comfort: 'Ergonomic Seats' }
+    features: ['Efficient City Travel', 'Comfortable Seating', 'Smooth Suspension'],
+    imageUrl: 'https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?auto=format&fit=crop&q=80&w=1200',
+    specifications: { ac: true, safety: 'Standard Safety Compliance', comfort: 'Reliable Commute' }
   },
   {
     id: 'f4',
-    name: '15 Seater Toyota Hiace',
+    name: '15 Seater Passenger Van',
     capacity: '15 Passengers',
-    features: ['Versatile', 'Comfortable Seating', 'Quick Boarding'],
-    imageUrl: 'https://picsum.photos/id/1074/800/600',
-    specifications: { ac: true, safety: 'SRS Airbags', comfort: 'High Efficiency' }
+    features: ['Agile Handling', 'Comfortable Cabin', 'Quick Boarding Access'],
+    imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=1200',
+    specifications: { ac: true, safety: 'Multi-point Safety Harness', comfort: 'Modern Interior' }
   }
 ];
 
 export const WHY_CHOOSE_US = [
-  { title: 'Safety First', description: 'All vehicles undergo rigorous periodic inspections and safety checks.', icon: ShieldCheck },
-  { title: '24/7 Availability', description: 'Round-the-clock operation support to handle any transport emergency.', icon: Clock },
-  { title: 'Expert Drivers', description: 'Multilingual, RTA-certified professional chauffeurs with years of experience.', icon: UserCheck },
-  { title: 'Affordable Pricing', description: 'Premium service at competitive market rates with no hidden costs.', icon: CircleDollarSign },
+  { title: 'Safety Integrity', description: 'Our entire fleet undergoes strict mechanical and hygiene audits daily.', icon: ShieldCheck },
+  { title: '24/7 Logistics', description: 'Continuous support dispatch to handle any logistical requirement around the clock.', icon: Clock },
+  { title: 'Professional Crew', description: 'Multilingual, certified drivers with extensive knowledge of all major routes.', icon: UserCheck },
+  { title: 'Competitive Value', description: 'Bespoke pricing plans designed to provide maximum value for your budget.', icon: CircleDollarSign },
 ];
 
 export const INDUSTRIES = [
-  'Corporate Offices',
-  'Schools & Colleges',
-  'Hotels & Resorts',
-  'Tourism Companies',
-  'Event Planners',
-  'Airline Crew'
+  'Corporate Business Houses',
+  'Educational Institutions',
+  'Luxury Hotels & Resorts',
+  'International Tourism Agencies',
+  'Major Event Management Companies',
+  'Regional Airline Logistics'
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 't1',
-    name: 'Sarah Johnson',
-    company: 'Skyline Events Dubai',
-    content: 'Axis Transport provided exceptional service for our corporate retreat. The buses were spotless and the drivers were incredibly professional.',
+    name: 'Alex Rivera',
+    company: 'Global Events Group',
+    content: 'The most professional transport partner we have worked with. Their attention to detail and punctuality is unmatched.',
     rating: 5
   },
   {
     id: 't2',
-    name: 'Ahmed Al Mansouri',
-    company: 'Palm Heights Hotel',
-    content: 'We rely on Axis for our daily staff transfers. Their punctuality and reliability are unmatched in the Dubai market.',
+    name: 'Janice Wu',
+    company: 'Grand Heritage Hotel',
+    content: 'Reliable, safe, and clean vehicles every time. Our guests always appreciate the level of service provided.',
     rating: 5
   }
 ];

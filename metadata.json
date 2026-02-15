@@ -1,0 +1,7 @@
+{
+  "name": "Axis Passenger Transport - Dubai",
+  "description": "A premium, professional bus rental and passenger transport service website for Axis Passenger Transport Bus Rent LLC in Dubai, UAE.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
